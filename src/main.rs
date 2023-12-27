@@ -40,6 +40,8 @@ fn main() -> Result<(), Box<dyn Error>> {
         })?
         .build();
 
+    println!("{}", swarm.local_peer_id());
+
     // Listen on all interfaces
     let listen_addr_tcp = Multiaddr::empty()
         .with(match opt.use_ipv6 {
